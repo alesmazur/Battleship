@@ -6,6 +6,10 @@ let hits = 0;
 let guesses = 0;
 let isSunk = false;
 
+if (isSunk === true) {
+  startButton.addEventListener("click", document.location.reload());
+}
+
 const battleLoop = () => {
   while (isSunk === false) {
     guess = prompt("Eneter a number from 0 to 6 ");
@@ -31,7 +35,9 @@ const battleLoop = () => {
     (3 / guesses) * 100
   )}%`;
   alert(stats);
+  document.location.reload(true);
 };
 
 const startButton = document.getElementById("h1");
-startButton.addEventListener("click", battleLoop);
+
+startButton.addEventListener("click", () => battleLoop);
